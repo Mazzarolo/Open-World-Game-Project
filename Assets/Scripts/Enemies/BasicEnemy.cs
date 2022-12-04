@@ -6,7 +6,8 @@ public class BasicEnemy : MonoBehaviour
 {
     [SerializeField] private float speed = 3;
     private Transform target;
-    public float damage = 20;
+    private float knockBack = 5; 
+    private float damage = 20;
 
     private void Update()
     {
@@ -43,10 +44,11 @@ public class BasicEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerStatus player = collision.gameObject.GetComponent<PlayerStatus>();
+            Vector3 diff = collision.transform.position - transform.position;
 
             if (player)
             {
-                player.TakeDamage(damage);
+                player.TakeDamage(damage, diff * knockBack);
             }
         }
     }

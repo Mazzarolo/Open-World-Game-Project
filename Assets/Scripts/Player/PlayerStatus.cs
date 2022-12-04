@@ -11,6 +11,7 @@ public class PlayerStatus : MonoBehaviour
     private Vector3 lifeBarSize;
     private float life;
     private float invincibleTime = 2;
+    private float stunedTime = 0.5f;
 
     private void Awake()
     {
@@ -27,12 +28,14 @@ public class PlayerStatus : MonoBehaviour
         Respawn();
     }
 
-    public void TakeDamage (float damage)
+    public void TakeDamage (float damage, Vector3 knockBack)
     {
         if (invincibleTime > 2)
         {
             invincibleTime = 0;
+            stunedTime = 0;
             life -= damage;
+            transform.position = transform.position + knockBack;
             lifeBar.GetComponent<Transform>().localScale -= new Vector3(lifeBarSize.x * damage / 100, 0, 0);
             lifeBar.GetComponent<Transform>().localPosition -= new Vector3(lifeBarSize.x * damage / 200, 0, 0);
         }
@@ -54,6 +57,7 @@ public class PlayerStatus : MonoBehaviour
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
         invincibleTime += Time.deltaTime;
+        stunedTime += Time.deltaTime;
     }
 
     private void DamageBarAnimation ()
@@ -63,6 +67,14 @@ public class PlayerStatus : MonoBehaviour
             redLifeBar.GetComponent<Transform>().localScale -= new Vector3(Time.deltaTime * 20, 0, 0);
             redLifeBar.GetComponent<Transform>().localPosition -= new Vector3(Time.deltaTime * 20 / 2, 0, 0);
         }
+    }
+
+    public bool IsStunned ()
+    {
+        if (stunedTime <= 0.5)
+            return true;
+        else
+            return false;
     }
 
     private void ChangeElement ()

@@ -16,23 +16,23 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void OnMovement (InputValue value)
-    {
-        movement = value.Get<Vector2>();
-    }
-
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        Move();
     }
 
-    void Start()
+    private void Move()
     {
-        
+        PlayerStatus status = GetComponent<PlayerStatus>();
+
+        if (!status.IsStunned())
+        {
+            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        }
     }
 
-    void Update()
+    private void OnMovement(InputValue value)
     {
-
+        movement = value.Get<Vector2>();
     }
 }
