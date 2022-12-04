@@ -41,7 +41,7 @@ public class PlayerStatus : MonoBehaviour
     private void Respawn ()
     {
         if (redLifeBar.GetComponent<Transform>().localScale.x <= 0)
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("GameScene");
     }
 
     private void InvinsibleAnimation ()
@@ -72,6 +72,9 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("OnFire", false);
             animator.SetBool("OnWater", false);
             animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", false);
             animator.SetBool("Normal", true);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -79,6 +82,9 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("OnFire", true);
             animator.SetBool("OnWater", false);
             animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", false);
             animator.SetBool("Normal", false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -86,6 +92,9 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("OnFire", false);
             animator.SetBool("OnWater", true);
             animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", false);
             animator.SetBool("Normal", false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -93,6 +102,39 @@ public class PlayerStatus : MonoBehaviour
             animator.SetBool("OnFire", false);
             animator.SetBool("OnWater", false);
             animator.SetBool("OnLightning", true);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", false);
+            animator.SetBool("Normal", false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            animator.SetBool("OnFire", false);
+            animator.SetBool("OnWater", false);
+            animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", true);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", false);
+            animator.SetBool("Normal", false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            animator.SetBool("OnFire", false);
+            animator.SetBool("OnWater", false);
+            animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", true);
+            animator.SetBool("OnAir", false);
+            animator.SetBool("Normal", false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            animator.SetBool("OnFire", false);
+            animator.SetBool("OnWater", false);
+            animator.SetBool("OnLightning", false);
+            animator.SetBool("OnEarth", false);
+            animator.SetBool("OnPlant", false);
+            animator.SetBool("OnAir", true);
             animator.SetBool("Normal", false);
         }
     }

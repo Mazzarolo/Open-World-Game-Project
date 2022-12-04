@@ -2887,10 +2887,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Green_Guy_0: -101280991
+      Green_Guy_118: -246981616
       Green_Guy_70: 1548131112
       Green_Guy_88: 1575424663
-      Green_Guy_96: -1377776123
+      Green_Guy_0: -101280991
       Green_Guy_52: 1061340277
       Green_Guy_113: 129450878
       Green_Guy_128: -379143828
@@ -3018,7 +3018,7 @@ TextureImporter:
       Green_Guy_102: -447140669
       Green_Guy_109: -1287191086
       Green_Guy_79: -950391607
-      Green_Guy_118: -246981616
+      Green_Guy_96: -1377776123
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
