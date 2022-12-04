@@ -9,7 +9,8 @@ public class CameraFollowing : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<UnityEngine.Camera>().orthographicSize = ((Screen.height / 2) / cameraDistance);
+        // Responsivo à tela
+        // GetComponent<UnityEngine.Camera>().orthographicSize = ((Screen.height / 2) / cameraDistance);
     }
 
     private void FixedUpdate()
