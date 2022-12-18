@@ -45,6 +45,7 @@ public class BasicEnemy : MonoBehaviour
         {
             PlayerStatus player = collision.gameObject.GetComponent<PlayerStatus>();
             Vector3 diff = collision.transform.position - transform.position;
+            diff.Normalize();
 
             if (player)
             {
